@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+</style>
+    <style>
+    body
+   {
+      background-color: #f5a478;
+    }
+    p{
+         font-family: 'Dancing Script', cursive;
+         font-size: 90px;
+         color:black;
+      }
+      img{
+        width: 300px;
+       height: 300px;
+
+      }
+
+    </style>
+    <title>Comparing arrays</title>
+    <script>
+
+
+        var i = 0;
+        var j = 0;
+        var pics = ["<img src = 'Beach.jpg'>" , "<img src = 'latte.jpg'>", "<img src = 'snow.jpg'>",  "<img src = 'watermelon.jpg'>", "<img src = 'pumpkins.jpg'>",  "<img src = 'leaves.webp'>" ];
+        var questions = ["Fall Or Not?","Fall Or Not?", "Fall Or Not?", "Fall Or Not?","Fall Or Not?",];
+        var userAnswers = [];
+        var realAnswers  = ["not", "fall", "not", "not", "fall"];
+         var count = 0;
+
+
+         function start()
+         {
+           document.getElementById("imgOut").innerHTML=pics[0];
+           document.getElementById("begin").style.visibility = "hidden";
+           //documument.getElementById(y).style.visibility= "hidden";
+         }
+
+       function comp()
+       {
+           i++;
+           document.getElementById('imgOut').innerHTML = pics[i];
+
+              userAnswers[j] =  parseInt(document.getElementById('input').value);
+              if(userAnswers[j] == realAnswers[j])
+                {
+                  count++;
+                  }
+            j++;
+                if(j > 4)
+                {
+                  win();
+                }
+      }
+
+
+      function win()
+      {
+        if(count >= 5)
+        {
+           alert("You are awesome!");
+         }
+         else {
+           alert("You are NOT awseome!");
+         }
+      }
+    </script>
+  </head>
+  <body>
+    <center><p>Fall or Not </p>
+    <input type = "textbox" value = "" id = "input">
+
+    <input type = "button" id = "continue" value = "Fall or Not?" onclick = "comp()">
+    <input type = "button" id = "begin" value = "Click Here To Begin" onclick = "start()">
+    <br>
+    <span id = "imgOut"></span></center>
+  </body>
+</html>
